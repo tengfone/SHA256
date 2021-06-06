@@ -28,7 +28,7 @@ function Decodepage() {
             <div className="flex flex-row flex-wrap py-10 justify-center">
                 <div className="px-4 py-3 rounded-lg xl:w-7/12 shadow p-4 flex">
                     <span className="w-auto flex justify-end items-center text-grey p-2">
-                        <i className="material-icons text-3xl">lock</i>
+                        <i className="material-icons text-3xl">lock_open</i>
                     </span>
                     <form className="w-full inline-flex" onSubmit={handleSubmit}>
                         <input id='decodeText' name='decodeText' onChange={(e) => setText(e.target.value)} type="text" className="w-full rounded p-2" placeholder="Place Encrypted SHA256 Here" />
