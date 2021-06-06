@@ -4,7 +4,7 @@ function Aboutpage() {
     return (
         <div>
             <div className="flex flex-row flex-wrap pt-10 justify-center">
-                <a rel="noopener noreferrer" href="https://www.github.com/tengfone" target="_blank">
+                <a rel="noopener noreferrer" href="https://github.com/tengfone/SHA256" target="_blank">
                     <div className="p-2 bg-blue-800 items-center text-indigo-100 leading-none rounded-full flex lg:inline-flex" role="alert">
                         <span className="flex rounded-full bg-blue-500 uppercase px-2 py-1 text-xs font-bold mr-3">New</span>
                         <span className="font-semibold mr-2 text-left flex-auto">Check Out The Source Code!</span>
