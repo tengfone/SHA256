@@ -25,7 +25,7 @@ function Card({ ...props }) {
                                     <p>256 bit long</p>
                                 </div>
                                 <div className="border-t border-b border-grey-lighter py-2 w-full text-center">
-                                    <p>Encrypt in Constant Time</p>
+                                    <p>Encrypt in Linear Time</p>
                                 </div>
                             </div>
                         </div>
