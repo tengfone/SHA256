@@ -1,15 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
-// Migrated from Create React App (craco). Output goes to `build/` so the
-// existing Vercel output-directory setting keeps working.
 export default defineConfig({
-  plugins: [react()],
-  envPrefix: ['VITE_', 'REACT_APP_'],
+  plugins: [react(), tailwindcss()],
   build: {
-    outDir: 'build',
+    outDir: "build",
   },
-  server: {
-    port: 3000,
-  },
-})
+});

@@ -1,3 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Schibsted Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+  --font-mono: "Fragment Mono", ui-monospace, monospace;
+  --color-field: #d5e0e6;
+  --color-ink: #10212b;
+  --color-dye: #0f6f8c;
+  --color-panel: #f4f8f9;
+  --color-match: #1d6b45;
+  --color-miss: #9d2c2c;
+  --color-line: #b7c6ce;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}
+
+button:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+  outline: 2px solid #0f6f8c;
+  outline-offset: 2px;
+}
