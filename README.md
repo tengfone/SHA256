@@ -2,7 +2,7 @@
 
 Started this as a side project while I was learning about blockchain, and it has grown into a small hash bench: hash text or files, check a digest you already have, or sign with HMAC. Everything runs in your browser with the Web Crypto API, so nothing you type or drop in is uploaded anywhere.
 
-<a href="https://sha-256-tengfone.vercel.app/"><img alt="Vercel" src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"/></a>
+<a href="https://sha-256-puce.vercel.app/"><img alt="Vercel" src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"/></a>
 
 ## Features
 
