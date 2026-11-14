@@ -1,28 +1,39 @@
-# Hash bench
+# SHA256 Generator
 
-A local hash workbench. It hashes text and files in the browser with Web Crypto, checks a digest you already have, and computes HMAC. Nothing is uploaded.
+Started this as a side project while I was learning about blockchain, and it has grown into a small hash bench: hash text or files, check a digest you already have, or sign with HMAC. Everything runs in your browser with the Web Crypto API, so nothing you type or drop in is uploaded anywhere.
 
-Live site: [sha-256-tengfone.vercel.app](https://sha-256-tengfone.vercel.app/)
+<a href="https://sha-256-tengfone.vercel.app/"><img alt="Vercel" src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"/></a>
 
-The GitHub homepage field should be `https://sha-256-tengfone.vercel.app/`. An older field pointed at `sha-256-puce.vercel.app`, which is not this app.
+## Features
 
-## What it does
+- **Hash** text or a file with SHA-256, SHA-384, SHA-512 or SHA-1, shown as hex or base64. The digest updates as you type.
+- **Verify** a digest you already have. Paste it as hex (any case) or base64, or paste a line straight from `sha256sum` (`<hash>  file.iso`) or BSD-style tools (`SHA256 (file.iso) = <hash>`). You get a clear match / no match, and a hint when the length belongs to a different algorithm.
+- **HMAC** with SHA-256, SHA-384, SHA-512 or SHA-1.
+- **Session history**: copy or save a result to keep it in the tab until you close it.
 
-- SHA-256, SHA-384, SHA-512, and SHA-1
-- Hex or base64
-- Text, including characters outside ASCII. The old hand-rolled function dropped those inputs.
-- File drop
-- Verify: paste an expected digest. Spaces and letter case are ignored for hex. A match or mismatch is the whole answer.
-- HMAC with a key that stays in the page
-- A short history for this browser tab
+SHA-1 is only there for checking old checksums. It is not collision-resistant, so don't use it for anything security-related.
 
-SHA-256 is one-way. There is no decode page, and the app does not send hashes to a lookup service.
+Hashes are one-way: there is no way to "decode" one back into the original text.
 
-## Run it locally
+## Privacy
+
+- Text, files and HMAC keys never leave the page. There is no backend, no analytics and no third-party fonts; the deployed site's Content Security Policy blocks outgoing connections entirely.
+- History lives in `sessionStorage` for the current tab only. HMAC keys and messages are never stored, and files are kept by name only.
+- Files are read into memory to be hashed. Above 512 MB the page warns you; above 2 GB it asks you to use `sha256sum` instead.
+
+## Development
+
+Needs Node.js 22.22+ or 24.15+.
 
 ```bash
 npm install
-npm start
+npm run dev      # start the dev server
+npm test         # unit and component tests (Vitest)
+npm run lint     # ESLint
+npm run build    # production build in build/
+npm run preview  # serve the production build
 ```
 
-`npm test` checks the known SHA-256 and HMAC test vectors. `npm run build` writes `build/`, which Vercel already publishes. Old links such as `/encode` and `/decode` open this same page.
+Built with React, Vite and Tailwind CSS. Deployed on Vercel.
+
+Made by [tengfone](https://github.com/tengfone).
