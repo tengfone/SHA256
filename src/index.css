@@ -5,11 +5,12 @@
   --font-mono: "Fragment Mono", ui-monospace, monospace;
   --color-field: #d5e0e6;
   --color-ink: #10212b;
-  --color-dye: #0f6f8c;
+  --color-dye: #0c6380;
   --color-panel: #f4f8f9;
   --color-match: #1d6b45;
   --color-miss: #9d2c2c;
   --color-line: #b7c6ce;
+  --color-edge: #647d8a;
 }
 
 html,
@@ -28,9 +29,14 @@ input {
   font: inherit;
 }
 
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+a:focus-visible,
 button:focus-visible,
 textarea:focus-visible,
 input:focus-visible {
-  outline: 2px solid #0f6f8c;
+  outline: 2px solid var(--color-dye);
   outline-offset: 2px;
 }
