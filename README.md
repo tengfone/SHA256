@@ -23,7 +23,7 @@ Hashes are one-way: there is no way to "decode" one back into the original text.
 
 ## Development
 
-Needs Node.js 22.22+ or 24.15+.
+Needs Node.js 26 (the current LTS); `.nvmrc` pins it, so `nvm use` picks it up.
 
 ```bash
 npm install
