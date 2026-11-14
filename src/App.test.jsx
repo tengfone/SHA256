@@ -213,3 +213,12 @@ describe("history", () => {
     expect(screen.getByText(/can't be restored/)).toBeInTheDocument();
   });
 });
+
+it("credits the author", () => {
+  render(<App />);
+  expect(screen.getByRole("link", { name: "tengfone" })).toHaveAttribute("href", "https://github.com/tengfone");
+  expect(screen.getByRole("link", { name: "Source on GitHub" })).toHaveAttribute(
+    "href",
+    "https://github.com/tengfone/sha256",
+  );
+});

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Footer from "./Footer.jsx";
 import {
   ALGORITHMS,
   digestBytes,
@@ -540,6 +541,7 @@ export default function App() {
         </section>
       </main>
 
+      <Footer />
     </div>
   );
 }
